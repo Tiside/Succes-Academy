@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <style>
+
+        
+
+
+
+@keyframes hoverShake {
+    0% {transform: skew(0deg, 0deg);}
+    25% {transform: skew(5deg, 5deg);}
+    75% {transform: skew(-5deg, -5deg);}
+    100% {transform: skew(0deg, 0deg);}
+}
+
+        .search-container {
+            background: #fff;
+            height: 30px;
+            border-radius: 30px;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.8s;
+            box-shadow: 4px 4px 6px 0 rgba(255,255,255,.3),
+                        -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+                        inset -4px -4px 6px 0 rgba(255,255,255,.2),
+                        inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+        }
+    
+        .search-container:hover > .search-input {
+            width: 400px;
+            border: 2px solid #000; /* Добавлено: Черные рамки при наведении */
+        }
+    
+        .search-container .search-input {
+            background: transparent;
+            border: 2px solid transparent; /* Черные рамки */
+            outline: none;
+            width: 0px;
+            font-weight: 500;
+            font-size: 16px;
+            transition: 0.8s;
+            border-radius: 100px;
+            padding: 5px;
+            margin-right: 10px; /* Добавлено для отступа справа */
+        }
+    
+        .search-container .search-btn {
+           
+            border-radius: 50%;
+            padding: 5px;
+        }
+
+      .search-btn{
+        color: orange;
+        background-color: black;
+      }
+    
+        .search-container:hover .search-btn .fas {
+            animation: hoverShake 0.15s linear 3;
+        }
+    
+        @keyframes hoverShake {
+            0% {transform: skew(0deg, 0deg);}
+            25% {transform: skew(5deg, 5deg);}
+            75% {transform: skew(-5deg, -5deg);}
+            100% {transform: skew(0deg, 0deg);}
+        }
+
+
+    </style>
+
+    <style>
+/* Стили для круглой кнопки и дополнительные стили для инпута */
+.gsc-search-box .gsc-search-button-v2,
+.gsc-search-box input.gsc-input {
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.gsc-search-box .gsc-search-button-v2 {
+    background-color: black;
+    padding: 12px;
+}
+
+.gsc-input-box {
+    border-radius: 30px;
+    border: 2px solid transparent;
+    transition: 0.3s;
+    padding-left: 10px;
+    overflow: hidden;
+    max-height: 0;
+    max-width: 0;
+}
+
+.gsc-input-box:hover,
+.gsc-input-box:focus {
+    border: 2px solid #000;
+}
+
+/* Показываем инпут при наведении на родительский контейнер */
+.gsc-search-box:hover .gsc-input-box {
+    max-height: 100px;
+    max-width: 300px;
+    animation: expandInput 0.8s ease-in-out; /* Используем анимацию */
+}
+
+@keyframes expandInput {
+    0% {
+        max-width: 0;
+        right: 100%;
+    }
+    100% {
+        max-width: 300px;
+        right: 0;
+    }
+}
+
+/* Стили для инпута в фокусе */
+input.gsc-input:focus {
+    border: none;
+    outline: none;
+}
+.gsc-search-box input.gsc-input {
+    text-align: center;
+}
+
+
+
+.vertical-line {
+    position: fixed;
+    top: 1;
+    right: 1;
+    height: 100%;
+    width: 2px;
+    background-color: black;
+    margin-left: 10px;
+  }
+
+
+    </style>
+<head>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+   </head>
+   
+   <body>
+   <div class="search-container">
+           <input type="text" name="search" placeholder="Search..." class="search-input">
+           <a href="#" class="search-btn">
+                   <i class="fas fa-search" style="padding: 5px;"></i>      
+           </a>
+       </div>
+
+       <hr class="vertical-line">
+       <div class="vertical-line"></div>
+        <script async src="https://cse.google.com/cse.js?cx=f487fa087e84d4121">
+        </script>
+        <div class="gcse-search"></div>
+       </body>
+       <script>
+        $(document).ready(function() {
+            // Показывать инпут при наведении на поиск
+            $('.gsc-search-box').hover(
+                function() {
+                    $(this).find('.gsc-input-box').stop().slideDown(200);
+                },
+                function() {
+                    $(this).find('.gsc-input-box').stop().slideUp(200);
+                }
+            );
+        });
+    </script>
+</body>
+</html>
+
+
